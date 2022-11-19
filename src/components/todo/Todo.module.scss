@@ -1,0 +1,52 @@
+@import 'src/variables';
+
+.wrapper {
+  position: relative;
+  margin: 10px 0;
+  padding: 12px 8px 12px 40px;
+  background: $white;
+  font-size: 20px;
+
+  box-shadow: $shadow;
+  border-radius: $border_radius;
+
+  display: flex;
+  justify-content: space-between;
+
+  .body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .id {
+    font-weight: bold;
+    font-size: 23px;
+    margin-right: 5px;
+  }
+
+  .title {
+    font-size: 23px;
+  }
+
+  .created_data{}
+
+  .icons {
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+  }
+
+  .img img {
+    width: 250px;
+    min-height: 250px;
+    height: 250px;
+    border-radius: 15px;
+  }
+
+  .time_to_end {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+

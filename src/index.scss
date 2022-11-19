@@ -1,0 +1,25 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary_color;
+  width: 100%;
+  font-family: $primary_font_family;
+}
+
+.body {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 70px auto;
+}

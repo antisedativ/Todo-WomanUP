@@ -1,0 +1,84 @@
+@import 'src/variables';
+
+%block_wrapper {
+  background-color: $white;
+  width: 450px;
+  height: 450px;
+  box-shadow: $shadow;
+  border-radius: $border_radius;
+}
+
+%h3 {
+  margin: 15px 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 23px;
+}
+
+.wrapper {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  @extend %block_wrapper;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .title {
+    margin: 20px 0;
+    font-size: 23px;
+
+    &  i {
+      font-weight: 500;
+    }
+  }
+
+  & h3 {
+    @extend %h3;
+  }
+
+  & .time,
+  & .desc,
+  & .file {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}
+
+.form {
+  @extend %block_wrapper;
+
+  & h3 {
+    @extend %h3;
+  }
+
+  & form {
+    margin-left: 30px;
+  }
+
+  & input {
+    align-items: center;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  & .btn {
+    cursor: pointer;
+    color: $black;
+    font-size: 18px;
+    height: 30px;
+    width: 120px;
+    &:hover {
+      background-color: $dark;
+      color: $white;
+    }
+  }
+}
