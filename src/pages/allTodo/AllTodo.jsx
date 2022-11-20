@@ -20,12 +20,17 @@ const AllTodo = () => {
     const [data] = useCollectionData(collection(db,'data'))
 
     return (
-        <div>
-            {!data ? <div className='loader'><CircularProgress color="secondary" /></div>
-                :data.map((todo, index) => (
-                <Todo index={index + 1} key={todo.key} todo={todo} />
-            ))}
-        </div>
+        <>
+            {
+                data.length === 0 ? <div><h2>Список дел пуст... Добавьте их!</h2></div>
+                    :<div>
+                        {!data ? <div className='loader'><CircularProgress color="secondary" /></div>
+                            :data.map((todo, index) => (
+                                <Todo index={index + 1} key={todo.key} todo={todo} />
+                            ))}
+                    </div>
+            }
+        </>
     );
 };
 
