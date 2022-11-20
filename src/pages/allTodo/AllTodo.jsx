@@ -6,8 +6,17 @@ import { collection} from "firebase/firestore";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import {CircularProgress} from "@mui/material";
 
+/**
+ * Реакт компонент
+ * Реализует страницу всех постов
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const AllTodo = () => {
+    // Получение данных из контекста
     const {db} = useContext(Context)
+
+    // Получение данных с сервера
     const [data] = useCollectionData(collection(db,'data'))
 
     return (

@@ -8,9 +8,13 @@ import './index.scss'
 import AllTodos from "./pages/allTodo/AllTodo";
 import TodoDetails from "./pages/todoDetails/TodoDetails";
 
+/**
+ * Реакт компонент (APP)
+ * В данном компоненте реализован роутинг
+ * @returns {JSX.Element}
+ * @constructor
+ */
 function App() {
-
-
     return (
         <Router >
             <Header />

@@ -10,16 +10,30 @@ import {Link} from "react-router-dom";
 import {doc, deleteDoc, updateDoc} from "firebase/firestore";
 import Timer from "../Timer";
 
+/**
+ * Функция, которая принимает время формата UNIX и возвращает формат ММ:СС
+ * @param {number} unix_timestamp - Время в формате UNIX
+ * @returns {string} - Время в формате ММ:СС
+ */
 const formattedTime = (unix_timestamp) => {
     let date = new Date(unix_timestamp * 1000);
     let hours = date.getHours();
     let minutes = "0" + date.getMinutes();
-
     return hours + ':' + minutes.substr(-2);
 }
 
+/**
+ * Реакт компонент самого поста
+ * @param {object} todo - Данные поста
+ * @param {number} index - Индекс
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const Todo = ({todo, index}) => {
+
     const [url, setUrl] = useState('')
+
+    // Получение данных из контекста
     const {storage, db} = useContext(Context)
 
     const docRef = doc(db, "data", todo.key);
@@ -31,10 +45,36 @@ const Todo = ({todo, index}) => {
             });
     }, [todo.complete])
 
+    /**
+     * Функция, которая позволяет отметить пост как "выполненный"
+     * @returns {Promise<void>}
+     * @example
+     * async function completeTodo () {
+     *         await updateDoc(docRef, {complete: !todo.complete});
+     *     }
+     */
     async function completeTodo () {
         await updateDoc(docRef, {complete: !todo.complete});
     }
 
+    /**
+     * Функция, которая позволяет удалять пост
+     * @returns {Promise<void>}
+     * @example
+     * async function deleteTodo () {
+     *         const newTodo = {
+     *             title: '',
+     *             description: '',
+     *             dateCompletion: '',
+     *             complete: false,
+     *             createdAt: 0,
+     *             fileName: ''
+     *         };
+     *
+     *         await deleteDoc(docRef);
+     *         await updateDoc(docRef, newTodo);
+     *     }
+     */
     async function deleteTodo () {
         const newTodo = {
             title: '',
@@ -52,7 +92,9 @@ const Todo = ({todo, index}) => {
     return (
         <div className={cl.wrapper}>
                 {
-                    todo.complete ? <DoneAllOutlinedIcon sx={{ fontSize: 70 }} style={{cursor:"pointer"}} onClick={completeTodo}/>
+                    todo.complete ? <div style={{margin: 'auto'}}>
+                            <DoneAllOutlinedIcon sx={{ fontSize: 70 }} style={{cursor:"pointer"}} onClick={completeTodo}/>
+                        </div>
                         : <>
                             <div className={cl.body}>
                                 <div className={cl.title}>

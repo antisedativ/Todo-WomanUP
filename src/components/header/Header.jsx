@@ -2,6 +2,15 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import cl from './Header.module.scss'
 
+/**
+ * Шапка приложения
+ * Содержит название и ссылки на страницы:
+ * - главная (all todos),
+ * - создание нового поста (create),
+ * - расширенная информация о приложении (about)
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const Header = () => {
     return (
         <div className={cl.wrapper}>

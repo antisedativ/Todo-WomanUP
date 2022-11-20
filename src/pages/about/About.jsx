@@ -1,5 +1,11 @@
 import React from 'react';
 
+/**
+ * Реакт компонент
+ * Реализует страницу, которая позволяет посмотреть подробную информацию о приложении
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const About = () => {
     return (
         <div>
@@ -45,6 +51,7 @@ const About = () => {
                 <a href="https://mui.com/material-ui/getting-started/overview/">Material UI Doc</a><br/>
                 <a href="https://day.js.org/docs/en/installation/installation">DayJS Doc</a><br/>
                 <a href="https://ru.reactjs.org/docs/getting-started.html">React Doc</a><br/>
+                <a href="https://jsdoc.app/">JSDoc</a>
                 <br/>
                 <b>Для решения проблем:</b> StackOverFlow и YouTube<br/>
                 <br/>

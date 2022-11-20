@@ -6,6 +6,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
+// Data
 const firebaseConfig = {
     apiKey: "AIzaSyAMmBLyrcISs6jKclOmafBfeztUd0GYku0",
     authDomain: "womanup-test-97950.firebaseapp.com",
@@ -25,6 +26,7 @@ const db = getFirestore(app);
 // Get the default bucket from a custom firebase.app.App
 const storage = getStorage(app);
 
+// Create context
 export const Context = createContext(null)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
