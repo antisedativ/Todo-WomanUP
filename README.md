@@ -4,7 +4,7 @@ WomanUP — ИТ-компания в области разработки обр�
 
 ## ⭐ Документация
 
-#### https://antisedativ.github.io/Todo-WomanUP/jsdoc/TodoDetails.html
+#### https://antisedativ.github.io/Todo-WomanUP/jsdoc/index.html
 
 ### ⭐ Задание
 
