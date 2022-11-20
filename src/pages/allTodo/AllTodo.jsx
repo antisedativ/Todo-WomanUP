@@ -22,13 +22,13 @@ const AllTodo = () => {
     return (
         <>
             {
-                data.length === 0 ? <div><h2>Список дел пуст... Добавьте их!</h2></div>
-                    :<div>
-                        {!data ? <div className='loader'><CircularProgress color="secondary" /></div>
-                            :data.map((todo, index) => (
-                                <Todo index={index + 1} key={todo.key} todo={todo} />
-                            ))}
-                    </div>
+                data ? <div>
+                    {data.length === 0 ? <div style={{marginTop: 40}}><h2>Список задач пуст... Добавьте новые задачи!</h2></div>
+                        :data.map((todo, index) => (
+                            <Todo index={index + 1} key={todo.key} todo={todo} />
+                        ))}
+                </div>
+                    : <div className='loader'><CircularProgress color="secondary" /></div>
             }
         </>
     );
